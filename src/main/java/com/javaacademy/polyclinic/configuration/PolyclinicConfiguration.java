@@ -28,7 +28,7 @@ public class PolyclinicConfiguration {
 
   @Bean
   public Doctor seniorSurgeon(
-      @Value("${cost-of-appointment.seniorSurgeon}") Long costOfAppointment) {
+      @Value("${cost-of-appointment.senior-surgeon}") Long costOfAppointment) {
     return new Doctor(BigDecimal.valueOf(costOfAppointment), SpecializationType.SURGEON);
   }
 }
