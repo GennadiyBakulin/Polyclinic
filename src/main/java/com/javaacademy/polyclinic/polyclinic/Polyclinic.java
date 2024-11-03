@@ -3,8 +3,10 @@ package com.javaacademy.polyclinic.polyclinic;
 import com.javaacademy.polyclinic.boxoffice.BoxOffice;
 import com.javaacademy.polyclinic.doctor.Doctor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
+@Component
 public class Polyclinic {
 
   private final BoxOffice boxOffice;
