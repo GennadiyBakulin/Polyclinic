@@ -10,25 +10,32 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PolyclinicConfiguration {
 
+  @Value("${doctor.cost.dentist}")
+  private long costDentist;
+  @Value("${doctor.cost.therapist}")
+  private long costTherapist;
+  @Value("${doctor.cost.junior-surgeon}")
+  private long costJuniorSurgeon;
+  @Value("${doctor.cost.senior-surgeon}")
+  private long costSeniorSurgeon;
+
   @Bean
-  public Doctor dentist(@Value("${cost-of-appointment.dentist}") Long costOfAppointment) {
-    return new Doctor(BigDecimal.valueOf(costOfAppointment), SpecializationType.DENTIST);
+  public Doctor dentist() {
+    return new Doctor(BigDecimal.valueOf(costDentist), SpecializationType.DENTIST);
   }
 
   @Bean
-  public Doctor therapist(@Value("${cost-of-appointment.therapist}") Long costOfAppointment) {
-    return new Doctor(BigDecimal.valueOf(costOfAppointment), SpecializationType.THERAPIST);
+  public Doctor therapist() {
+    return new Doctor(BigDecimal.valueOf(costTherapist), SpecializationType.THERAPIST);
   }
 
   @Bean
-  public Doctor juniorSurgeon(
-      @Value("${cost-of-appointment.junior-surgeon}") Long costOfAppointment) {
-    return new Doctor(BigDecimal.valueOf(costOfAppointment), SpecializationType.SURGEON);
+  public Doctor juniorSurgeon() {
+    return new Doctor(BigDecimal.valueOf(costJuniorSurgeon), SpecializationType.SURGEON);
   }
 
   @Bean
-  public Doctor seniorSurgeon(
-      @Value("${cost-of-appointment.senior-surgeon}") Long costOfAppointment) {
-    return new Doctor(BigDecimal.valueOf(costOfAppointment), SpecializationType.SURGEON);
+  public Doctor seniorSurgeon() {
+    return new Doctor(BigDecimal.valueOf(costSeniorSurgeon), SpecializationType.SURGEON);
   }
 }

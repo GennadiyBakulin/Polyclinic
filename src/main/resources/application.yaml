@@ -1,5 +1,6 @@
-cost-of-appointment:
-  dentist: 1500
-  therapist: 500
-  junior-surgeon: 700
-  senior-surgeon: 2000
+doctor:
+  cost:
+    dentist: 1500
+    therapist: 500
+    junior-surgeon: 700
+    senior-surgeon: 2000
